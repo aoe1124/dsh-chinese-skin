@@ -1,0 +1,211 @@
+body[data-dsh-chinese-skin] {
+  color-scheme: light;
+  --dsw-alias-bg-base: var(--chinese-base);
+  --dsw-alias-bg-layer-1: var(--chinese-raised);
+  --dsw-alias-bg-layer-2: var(--chinese-raised);
+  --dsw-alias-bg-layer-3: var(--chinese-raised);
+  --dsw-alias-bg-overlay: var(--chinese-selection);
+  --dsw-specific-sidebar-fill: var(--chinese-sidebar);
+  --dsw-alias-label-primary: var(--chinese-ink);
+  --dsw-alias-label-primary-dimmed: var(--chinese-ink);
+  --dsw-alias-label-secondary: var(--chinese-muted);
+  --dsw-alias-label-tertiary: var(--chinese-muted);
+  --dsw-alias-label-caption: var(--chinese-muted);
+  --dsw-alias-border-l1: var(--chinese-border);
+  --dsw-alias-border-l2: var(--chinese-border);
+  --dsw-alias-border-l3: var(--chinese-border);
+  --dsw-alias-brand-primary: var(--chinese-accent);
+  --dsw-alias-brand-primary-invert: var(--chinese-ink);
+  --dsw-alias-button-primary-fill: var(--chinese-accent);
+  --dsw-alias-label-primary-foreground: white;
+  --dsw-alias-label-primary-inverted: white;
+}
+
+body[data-dsh-chinese-skin] [data-conversation-content] {
+  --dsw-alias-markdown-inline-code: color-mix(in srgb, var(--chinese-base), var(--chinese-selection) 26%);
+  --dsw-specific-bubble: color-mix(in srgb, var(--chinese-base), var(--chinese-selection) 72%);
+  background: linear-gradient(105deg, var(--chinese-base), var(--chinese-end));
+}
+
+/* Let inline code pick up the canvas gradient beneath it. */
+body[data-dsh-chinese-skin]:is([data-dsh-chinese-skin="tianqing"], [data-dsh-chinese-skin="dunhuang"], [data-dsh-chinese-skin="dianlan"]) [data-conversation-content] {
+  --dsw-alias-markdown-inline-code: color-mix(in srgb, transparent, var(--chinese-ink) 2.5%);
+  --dsw-specific-bubble: color-mix(in srgb, var(--chinese-end), var(--chinese-ink) 6%);
+  --chinese-inline-border: color-mix(in srgb, transparent, var(--chinese-ink) 5%);
+}
+
+body[data-dsh-chinese-skin] [data-composer-card] {
+  --dsw-alias-button-info-fill: var(--chinese-accent);
+  --dsw-alias-button-info-hover: color-mix(in srgb, var(--chinese-accent), black 15%);
+  background: var(--chinese-raised);
+  border-color: var(--chinese-border);
+  border-radius: var(--chinese-radius);
+}
+
+body[data-dsh-chinese-skin] [data-composer-card] button[aria-haspopup="listbox"][class$="_add"] {
+  --dsw-specific-selector: var(--chinese-sidebar);
+  --dsw-alias-interactive-bg-hover-solid: var(--chinese-selection);
+}
+
+body[data-dsh-chinese-skin] [data-composer-overlay] [data-menu-material] {
+  --dsw-menu-surface-fill: var(--chinese-raised);
+  --dsw-menu-backdrop-filter: none;
+  --dsw-alias-interactive-bg-hover: var(--chinese-selection);
+}
+
+body[data-dsh-chinese-skin] [data-conversation-content] button[class$="_toBottom"] {
+  --dsw-alias-button-floating-fill: var(--chinese-raised);
+  --dsw-alias-button-floating-hover: var(--chinese-selection);
+}
+
+body[data-dsh-chinese-skin] [data-row-key^="session:"][aria-selected="true"] {
+  background-color: var(--chinese-selection);
+  background-image: linear-gradient(var(--chinese-accent), var(--chinese-accent));
+  background-position: left 8px center;
+  background-repeat: no-repeat;
+  background-size: 2px 14px;
+}
+
+body[data-dsh-chinese-skin] .md-code-block {
+  --dsw-alias-markdown-code-block: var(--chinese-code);
+  --dsw-alias-markdown-code-block-banner: color-mix(in srgb, var(--chinese-code), white 7%);
+  --dsw-alias-label-primary: #f0ebe1;
+  --dsw-alias-label-secondary: #ddd6c9;
+  --dsw-alias-label-tertiary: #ccc3b3;
+  --shiki-foreground: #f0ebe1;
+  --shiki-token-constant: #8dc5fa;
+  --shiki-token-string: #a6d8aa;
+  --shiki-token-comment: #b7b4a8;
+  --shiki-token-keyword: #ffc0ce;
+  --shiki-token-parameter: #ffc594;
+  --shiki-token-function: #dcc6ff;
+  --shiki-token-string-expression: #b9dfab;
+  --shiki-token-punctuation: #e3dcd0;
+  --shiki-token-link: #9ed4ff;
+  color: var(--shiki-foreground);
+}
+
+body[data-dsh-chinese-skin] [data-slot="sidebar.brand.mark"] > * {
+  display: none;
+}
+
+body[data-dsh-chinese-skin] [data-slot="sidebar.brand.mark"]::before {
+  content: var(--chinese-stamp);
+  display: inline-grid;
+  place-items: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 4px;
+  background: var(--chinese-accent);
+  color: white;
+  font: 600 14px "Noto Serif SC", "Songti SC", SimSun, serif;
+}
+
+/* The desktop frame paints its own translucent blue wash over the sidebar
+   token. Replace that surface with opaque paper while a skin is active. */
+html[data-platform="darwin"] body[data-dsh-chinese-skin] [class$="_frame"] > [class$="_sidebarCol"] {
+  background: var(--chinese-sidebar);
+  /* The desktop center column already draws the dividing rule. */
+  --dsw-alias-state-business-primary: var(--chinese-muted);
+}
+
+body[data-dsh-chinese-skin] button[class*="_newSession"] {
+  background: var(--chinese-raised);
+  border: 1px solid var(--chinese-border);
+  border-radius: 6px;
+}
+
+body[data-dsh-chinese-skin] button[class*="_newSession"]:hover {
+  border-color: var(--chinese-accent);
+}
+
+body[data-dsh-chinese-skin] [data-slot="sidebar.brand.name"] svg {
+  height: 20px;
+  width: auto;
+}
+
+body[data-dsh-chinese-skin] [data-slot="sidebar.brand.name"] svg > rect {
+  fill: transparent;
+  stroke: var(--chinese-border);
+}
+
+body[data-dsh-chinese-skin] [data-slot="sidebar.brand.name"] svg > g[clip-path="url(#dsh-wordmark-badge-clip)"] {
+  --dsw-alias-label-primary-inverted: var(--chinese-muted);
+}
+
+body[data-dsh-chinese-skin] [data-conversation-tabs] [role="tab"][aria-selected="true"] {
+  color: var(--chinese-tab, var(--chinese-accent));
+}
+
+body[data-dsh-chinese-skin] [data-conversation-tabs] [role="tab"][aria-selected="true"]::after {
+  background: var(--chinese-accent);
+}
+
+body[data-dsh-chinese-skin="mozhu"] {
+  --chinese-tab: var(--chinese-ink);
+  --chinese-muted: #4b4638;
+  --dsw-alias-label-caption: #81786c;
+  --ds-font-family-code: "JetBrains Mono", Menlo, Consolas, monospace;
+}
+
+body[data-dsh-chinese-skin] [data-conversation-content] [class*="_markdown"] :not(pre) > code {
+  border-color: var(--chinese-inline-border, color-mix(in srgb, var(--chinese-base), var(--chinese-border) 65%));
+  border-radius: 2px;
+}
+
+body[data-dsh-chinese-skin="mozhu"] [data-conversation-content] [class*="_markdown"] blockquote {
+  background: var(--chinese-raised);
+  border-inline-start: 2px solid var(--chinese-border);
+  border-radius: 0 2px 2px 0;
+  color: var(--chinese-muted);
+  padding: 8px 12px;
+}
+
+body[data-dsh-chinese-skin="mozhu"] [data-conversation-content] .md-code-block {
+  --dsw-alias-markdown-code-block-banner: var(--chinese-code);
+  --shiki-token-comment: #9db17a;
+  --shiki-token-keyword: #d9c3a5;
+  --shiki-token-function: #d9c3a5;
+  --shiki-token-string: #c1cc9f;
+  border-radius: 8px;
+}
+
+body[data-dsh-chinese-skin="mozhu"] .md-code-block [data-code-block-banner] {
+  border-block-end: 1px solid rgb(255 255 255 / 8%);
+}
+
+body[data-dsh-chinese-skin="mozhu"] [data-composer-card] {
+  box-shadow: inset 0 0 0 1px var(--chinese-border), 0 8px 24px rgb(75 70 56 / 8%);
+}
+
+body[data-dsh-chinese-skin="mozhu"] [data-composer-card] button[class$="_primary"]:disabled:not([data-sending]) {
+  opacity: 0.7;
+}
+
+body[data-dsh-chinese-skin="mozhu"] [data-composer-dock] {
+  font-family: var(--ds-font-family-code);
+  color: var(--dsw-alias-label-caption);
+}
+
+body[data-dsh-chinese-skin="mozhu"] [data-composer-dock] button {
+  font-family: inherit;
+  color: inherit;
+}
+
+body[data-dsh-chinese-skin] button[data-signed-out="false"] [class$="_avatar"] {
+  display: inline-grid;
+  place-items: center;
+  background: var(--chinese-raised);
+  border: 1px solid var(--chinese-border);
+  border-radius: 2px;
+}
+
+body[data-dsh-chinese-skin] button[data-signed-out="false"] [class$="_avatar"] > * {
+  display: none;
+}
+
+body[data-dsh-chinese-skin] button[data-signed-out="false"] [class$="_avatar"]::before {
+  content: var(--chinese-avatar);
+  color: var(--chinese-muted);
+  font: 12px "Noto Serif SC", "Songti SC", SimSun, serif;
+}
