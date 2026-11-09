@@ -2,7 +2,29 @@
 
 一个 Cordis 插件内置墨竹、青绿、天青、敦煌、靛蓝五套亮色皮肤。首次启用默认墨竹，进入「设置 → 中国风皮肤」即可切换或选择「官方外观」。选择保存在当前客户端的本地存储。
 
-![中国风皮肤设置页，展示五套皮肤和官方外观](docs/preview.png)
+## 皮肤实拍
+
+以下截图来自 DeepSeek Harness 的新会话页面。点击图片可查看原尺寸。
+
+### 墨竹
+
+[![墨竹皮肤实拍](docs/screenshots/mozhu.jpg)](docs/screenshots/mozhu.jpg)
+
+### 青绿
+
+[![青绿皮肤实拍](docs/screenshots/qinglv.jpg)](docs/screenshots/qinglv.jpg)
+
+### 天青
+
+[![天青皮肤实拍](docs/screenshots/tianqing.jpg)](docs/screenshots/tianqing.jpg)
+
+### 敦煌
+
+[![敦煌皮肤实拍](docs/screenshots/dunhuang.jpg)](docs/screenshots/dunhuang.jpg)
+
+### 靛蓝
+
+[![靛蓝皮肤实拍](docs/screenshots/dianlan.jpg)](docs/screenshots/dianlan.jpg)
 
 ## 桌面版安装
 
